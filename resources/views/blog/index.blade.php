@@ -10,7 +10,7 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Blog Saya</a>
+        <a class="navbar-brand" href="/">Blog Saya</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -30,6 +30,9 @@
         </div>
     </nav>
     <div class="container mt-3">
+        <div class="d-flex flex-row-reverse my-3">
+            <a href="/create" class="btn btn-success">Tambah Baru</a>
+        </div>
         <div class="card mb-4">
             <div class="card-body">
                 <h2 class="card-title">Post Title</h2>
