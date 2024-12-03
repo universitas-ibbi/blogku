@@ -5,9 +5,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PostController::class, 'index']);
 
-Route::post("/simpan", [PostController::class, 'simpan']);
 
-Route::view("/create", "blog.create");
+Route::middleware("auth")->group(function () {
+    Route::post("/simpan", [PostController::class, 'simpan']);
+    // Route::post("/simpan", [PostController::class, 'simpan'])
+    //     ->middleware("auth");
+    Route::view("/create", "blog.create");
+    // Route::view("/create", "blog.create")
+    // ->middleware("auth");
+});
 
 
 // Route::get("/about", function () {
@@ -21,3 +27,7 @@ Route::view("/about", "about");
 // });
 
 Route::view("/contact", "contact");
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

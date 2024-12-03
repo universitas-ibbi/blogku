@@ -1,5 +1,6 @@
 composer install
-copy .env.example .env
+cp .env.example .env
 php artisan key:generate
-php artisan migrate --seed
+touch database/database.sqlite
+php artisan migrate:fresh --seed
 npm install && npm run build
